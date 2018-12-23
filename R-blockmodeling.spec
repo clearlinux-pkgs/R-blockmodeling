@@ -4,7 +4,7 @@
 #
 Name     : R-blockmodeling
 Version  : 0.3.1
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/blockmodeling_0.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blockmodeling_0.3.1.tar.gz
 Summary  : Generalized and Classical Blockmodeling of Valued Networks
