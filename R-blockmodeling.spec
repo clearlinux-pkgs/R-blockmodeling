@@ -4,20 +4,17 @@
 #
 Name     : R-blockmodeling
 Version  : 0.3.4
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/blockmodeling_0.3.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blockmodeling_0.3.4.tar.gz
 Summary  : Generalized and Classical Blockmodeling of Valued Networks
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-blockmodeling-lib = %{version}-%{release}
-Requires: R-bibtex
-Requires: R-iterators
-Requires: R-network
-Requires: R-pkgmaker
-Requires: R-registry
-Requires: R-rngtools
-Requires: R-xtable
+Requires: R-doParallel
+Requires: R-doRNG
+Requires: R-foreach
+Requires: R-stringi
 BuildRequires : R-bibtex
 BuildRequires : R-doParallel
 BuildRequires : R-doRNG
@@ -28,6 +25,7 @@ BuildRequires : R-pkgmaker
 BuildRequires : R-registry
 BuildRequires : R-rngtools
 BuildRequires : R-sna
+BuildRequires : R-stringi
 BuildRequires : R-xtable
 BuildRequires : buildreq-R
 
@@ -49,13 +47,13 @@ lib components for the R-blockmodeling package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556485641
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562443571
 
 %install
-export SOURCE_DATE_EPOCH=1556485641
+export SOURCE_DATE_EPOCH=1562443571
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -84,7 +82,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
