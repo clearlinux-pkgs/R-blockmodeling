@@ -1,14 +1,2 @@
-0.3.4
-R-bibtex
-R-doParallel
-R-doRNG
-R-foreach
-R-iterators
-R-network
-R-pkgmaker
-R-registry
-R-rngtools
+0.3.6
 R-sna
-R-stringi
-R-xtable
-util-linux
