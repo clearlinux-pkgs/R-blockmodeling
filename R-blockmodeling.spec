@@ -4,19 +4,17 @@
 #
 Name     : R-blockmodeling
 Version  : 0.3.6
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/blockmodeling_0.3.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blockmodeling_0.3.6.tar.gz
 Summary  : Generalized and Classical Blockmodeling of Valued Networks
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-blockmodeling-lib = %{version}-%{release}
-Requires: R-sna
-BuildRequires : R-sna
 BuildRequires : buildreq-R
 
 %description
-No detailed description available
+In addition, measures of similarity or dissimilarity based on structural equivalence and
 
 %package lib
 Summary: lib components for the R-blockmodeling package.
@@ -28,21 +26,22 @@ lib components for the R-blockmodeling package.
 
 %prep
 %setup -q -c -n blockmodeling
+cd %{_builddir}/blockmodeling
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581993467
+export SOURCE_DATE_EPOCH=1589778578
 
 %install
-export SOURCE_DATE_EPOCH=1581993467
+export SOURCE_DATE_EPOCH=1589778578
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
