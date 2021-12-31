@@ -4,7 +4,7 @@
 #
 Name     : R-blockmodeling
 Version  : 1.0.5
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/blockmodeling_1.0.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blockmodeling_1.0.5.tar.gz
 Summary  : Generalized and Classical Blockmodeling of Valued Networks
@@ -33,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640900417
+export SOURCE_DATE_EPOCH=1640982249
 
 %install
-export SOURCE_DATE_EPOCH=1640900417
+export SOURCE_DATE_EPOCH=1640982249
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
